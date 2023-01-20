@@ -248,9 +248,8 @@ int main() {
             }
             susunanAngka[index] = newi;
             index++;
-            cout << newi << endl;
         }
-        cout << susunanAngka.size() << endl;
+        
         vector <string> susunanOperator;
         for (string i : ops) {
             for (string j : ops) {
