@@ -234,16 +234,23 @@ int main() {
 
         int index = 0;
         for (string i : susunanAngka) {
+            string newi = "";
             for (int j = 0; j < i.length()-1; j++) {
                 if (i[j] == '1' && i[j+1] == '0') {
-                    i.erase(j, 2);
-                    i.insert(j, "L");
+                    i[j] = 'L';
+                    i[j+1] = '\0';
                 }
             }
-            susunanAngka[index] = i;
+            for (char c : i) {
+                if (c != '\0') {
+                    newi += c;
+                }
+            }
+            susunanAngka[index] = newi;
             index++;
+            cout << newi << endl;
         }
-
+        cout << susunanAngka.size() << endl;
         vector <string> susunanOperator;
         for (string i : ops) {
             for (string j : ops) {
