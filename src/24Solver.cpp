@@ -107,6 +107,31 @@ bool isInVector(vector <string> solusi, string kalimat) {
     return false;
 }
 
+int lengthstring(string hehe) {
+    // Function untuk menghitung panjang string
+    int panjang = 0;
+    for (char c : hehe) {
+        panjang++;
+    }
+    return panjang;
+}
+
+int lengthvector(vector <string> dummy) {
+    // Function untuk mencari panjang dari sebuah array vector
+    int panjang = 0;
+    for (string i : dummy) {
+        panjang++;
+    }
+    return panjang;
+}
+
+void makeEmpty (vector <string> * solusi) {
+    // Function untuk membuat array angka kembali kosong apabila input tidak valid dan user masih ingin memakai program
+    while (lengthvector(*solusi) != 0) {
+        solusi->pop_back();
+    }
+}
+
 int main() {
     // Container
     vector <string> number;
@@ -179,8 +204,8 @@ int main() {
                 string input = "";
                 getline(cin, input);
                 int n = 0;
-                while (n < input.length()) {
-                    if (input[n] == '1' && input[n+1] == '0' && n < input.length()-1) {
+                while (n < lengthstring(input)) {
+                    if (input[n] == '1' && input[n+1] == '0' && n < lengthstring(input)-1) {
                         number.push_back("10");
                         n++;
                     }
@@ -190,16 +215,16 @@ int main() {
                     }
                     n++;
                 }
-                if (number.size() != 4 && number.size() > 4) {
-                    number.clear();
+                if (lengthvector(number) != 4 && lengthvector(number) > 4) {
+                    makeEmpty(&number);
                     cout << "Input tidak valid, Silahkan masukan input sebanyak 4 string saja dan berupa angka 1-10 atau huruf A J Q K saja" << endl;
                     cout << "Silahkan Masukan Nilai Kartu : ";
                 }
-                else if (number.size() == 4) {
+                else if (lengthvector(number) == 4) {
                     if ((cekInputValidKartu(number[0]) == 0 || cekInputValidKartu(number[1]) == 0 || cekInputValidKartu(number[3]) == 0 || cekInputValidKartu(number[2]) == 0)) {
                         cout << "Input tidak valid, Silahkan masukan input sebanyak 4 string saja dan berupa angka 1-10 atau huruf A J Q K saja" << endl;
                         cout << "Silahkan Masukan Nilai Kartu : ";
-                        number.clear();
+                        makeEmpty(&number);
                     }
                     else {
                         valid = true;
@@ -235,7 +260,7 @@ int main() {
         int index = 0;
         for (string i : susunanAngka) {
             string newi = "";
-            for (int j = 0; j < i.length()-1; j++) {
+            for (int j = 0; j < lengthstring(i)-1; j++) {
                 if (i[j] == '1' && i[j+1] == '0') {
                     i[j] = 'L';
                     i[j+1] = '\0';
@@ -375,7 +400,7 @@ int main() {
         }
 
         // Print semua solusi
-        if (seluruhSolusi.size() == 0) {
+        if (lengthvector(seluruhSolusi) == 0) {
             cout << "Tidak ada solusi untuk kombinasi kartu ini" << endl;
             clock_t end = clock();
             cout << "Waktu eksekusi program adalah " << end-start << " milliseconds" << endl;
@@ -385,7 +410,7 @@ int main() {
             for (string i : seluruhSolusi) {
                 cout << i << endl;
             }
-            cout << "Ada " << seluruhSolusi.size() << " untuk kombinasi kartu ini" << endl;
+            cout << "Ada " << lengthvector(seluruhSolusi) << " untuk kombinasi kartu ini" << endl;
             clock_t end = clock();
             cout << "Waktu eksekusi program adalah " << end-start << " milliseconds" << endl;
 
@@ -417,7 +442,7 @@ int main() {
             cout << "Terima kasih telah menggunakan program 24 Solver ini" << endl;
         }
         else if (lanjut == "y" || lanjut == "Y") {
-            number.clear();
+            makeEmpty(&number);
         }
     }
 }
