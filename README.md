@@ -12,20 +12,23 @@ Repository ini dibuat untuk memenuhi tugas kecil 1 pada mata kuliah IF2211 Strat
 Program ini digunakan untuk mencari semua solusi pada permainan kartu 24 dengan menggunakan algoritma brute force. Program menerima masukan langsung dari user yang berupa angka atau huruf dari kartu remi. Program kemudian akan mencari semua solusi untuk permainan kartu 24 dengan masukan dari user dan akan mengeluarkan output di terminal berupa semua solusi yang ada. Program dibuat menggunakan bahasa C++
 
 ## Struktur Program
- ┣ 📂bin
- 
- ┃ ┗ 📜24Solver.exe
- ┣ 📂doc
- ┃ ┗ 📜Tucil1_K1_13521127_Marcel Ryan Antony.pdf
- ┣ 📂src
- ┃ ┗ 📜24Solver.cpp
- ┣ 📂test
- ┃ ┣ 📜test1.txt
- ┃ ┣ 📜test2.txt
- ┃ ┣ 📜test3.txt
- ┃ ┣ 📜test4.txt
- ┃ ┗ 📜test5.txt
- ┗ 📜README.md
+ .
+ ┣ bin
+ ┃ ┗ 24Solver.exe
+ ┣ doc
+ ┃ ┗ Tucil1_K1_13521127_Marcel Ryan Antony.pdf
+ ┣ src
+ ┃ ┣ 24Solver.cpp
+ ┃ ┣ check.cpp
+ ┃ ┣ check.exe
+ ┃ ┗ tes.exe
+ ┣ test
+ ┃ ┣ test1.txt
+ ┃ ┣ test2.txt
+ ┃ ┣ test3.txt
+ ┃ ┣ test4.txt
+ ┃ ┗ test5.txt
+ ┗ README.md
  
 ## Requirements
 C++14
