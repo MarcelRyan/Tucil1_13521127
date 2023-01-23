@@ -13,6 +13,7 @@ Program ini digunakan untuk mencari semua solusi pada permainan kartu 24 dengan 
 
 ## Struktur Program
  ┣ 📂bin
+ 
  ┃ ┗ 📜24Solver.exe
  ┣ 📂doc
  ┃ ┗ 📜Tucil1_K1_13521127_Marcel Ryan Antony.pdf
